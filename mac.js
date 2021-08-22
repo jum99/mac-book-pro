@@ -12,12 +12,12 @@ let bestPrice = document.getElementById("bestPrice");
  memoryPrice8.addEventListener("click", function(){
      extraMemory.innerText = "0";
      updateTotalPrice();
-     updateFooterPrice();
+    //  updateFooterPrice();
  })
 memoryPrice16.addEventListener("click", function() {
      extraMemory.innerText = "180";
      updateTotalPrice();
-     updateFooterPrice();
+    //  updateFooterPrice();
 })
 // =====MEMORY PART ENDS=====
 
@@ -26,17 +26,17 @@ const extraStorage = document.getElementById("extraStorage");
 storagePrice256.addEventListener("click", function(){
     extraStorage.innerText = "0";
     updateTotalPrice();
-    updateFooterPrice();
+    // updateFooterPrice();
 })
 storagePrice512.addEventListener("click", function(){
     extraStorage.innerText = "100";
     updateTotalPrice();
-    updateFooterPrice();
+    // updateFooterPrice();
 })
 storagePrice1Tb.addEventListener("click", function(){
     extraStorage.innerText = "180";
     updateTotalPrice();
-    updateFooterPrice();
+    // updateFooterPrice();
 
 })
 // =====STORAGE PART ENDS===== 
@@ -46,12 +46,12 @@ const deliveryCostUpdate = document.getElementById("deliveryCostUpdate");
 deliveryFree.addEventListener("click", function(){
     deliveryCostUpdate.innerText = "0";
     updateTotalPrice();
-    updateFooterPrice();
+    // updateFooterPrice();
 })
 deliveryCharge.addEventListener("click", function(){
     deliveryCostUpdate.innerText = "20";
     updateTotalPrice();
-    updateFooterPrice();
+    // updateFooterPrice();
 })
 // =====DELIVERY PART ENDS=====
 
@@ -67,6 +67,23 @@ function updateTotalPrice() {
     totalPrice.innerText = totalPriceUpdate;
     // =====BONUS PART FOOTER PRICE===== 
     footerPrice.innerText = totalPriceUpdate;
+    return totalPriceUpdate;
 }
 
- 
+// =====BONUS PART PROMO CODE===== 
+ function calculate(code) {
+    code= document.getElementById('promo-code').value;
+    if(code=='stevekaku'){
+        const reducingAmount = parseFloat(totalPrice.innerText)*0.20;
+        const afterPromoCost =totalPrice.innerText- parseFloat(reducingAmount);
+       footerPrice.innerText=afterPromoCost;
+       return afterPromoCost;
+        
+    }
+
+ }
+ document.getElementById('code-entered').addEventListener('click',function(){
+  
+    calculate('stevekaku');
+    document.getElementById('promo-code').value = '';
+ });
