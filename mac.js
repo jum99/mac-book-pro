@@ -1,14 +1,14 @@
-const memoryPrice8 = document.getElementById("memoryPrice8");
-const memoryPrice16 = document.getElementById("memoryPrice16");
- const storagePrice256 = document.getElementById("storagePrice256");
-const storagePrice512 = document.getElementById("storagePrice512");
-const storagePrice1Tb = document.getElementById("storagePrice1Tb");
- const deliveryFree = document.getElementById("freeDelivery");
-const deliveryCharge = document.getElementById("deliveryCharge");
-let bestPrice = document.getElementById("bestPrice");
+const memoryPrice8 = document.getElementById("memory-price-8");
+const memoryPrice16 = document.getElementById("memory-price-16");
+ const storagePrice256 = document.getElementById("storage-price-256");
+const storagePrice512 = document.getElementById("storage-price-512");
+const storagePrice1Tb = document.getElementById("storage-price-1tb");
+ const deliveryFree = document.getElementById("free-delivery");
+const deliveryCharge = document.getElementById("delivery-charge");
+let bestPrice = document.getElementById("best-price");
 
 // =====MEMORY PART STARTS===== 
- const extraMemory = document.getElementById("extraMemory");
+ const extraMemory = document.getElementById("extra-memory");
  memoryPrice8.addEventListener("click", function(){
      extraMemory.innerText = "0";
      updateTotalPrice();
@@ -22,7 +22,7 @@ memoryPrice16.addEventListener("click", function() {
 // =====MEMORY PART ENDS=====
 
 // =====STORAGE PART STARTS===== 
-const extraStorage = document.getElementById("extraStorage");
+const extraStorage = document.getElementById("extra-storage");
 storagePrice256.addEventListener("click", function(){
     extraStorage.innerText = "0";
     updateTotalPrice();
@@ -42,7 +42,7 @@ storagePrice1Tb.addEventListener("click", function(){
 // =====STORAGE PART ENDS===== 
 
 // =====DELIVERY PART STARTS===== 
-const deliveryCostUpdate = document.getElementById("deliveryCostUpdate");
+const deliveryCostUpdate = document.getElementById("delivery-cost-update");
 deliveryFree.addEventListener("click", function(){
     deliveryCostUpdate.innerText = "0";
     updateTotalPrice();
@@ -56,8 +56,8 @@ deliveryCharge.addEventListener("click", function(){
 // =====DELIVERY PART ENDS=====
 
 // =====TOTAL PRICE COUNT===== 
-const totalPrice = document.getElementById("totalPrice");
-const footerPrice = document.getElementById("footerPrice");
+const totalPrice = document.getElementById("total-price");
+const footerPrice = document.getElementById("footer-price");
 function updateTotalPrice() {
     let bestPriceUpdate = Number(bestPrice.innerText);
     const extraMemoryCost = Number(extraMemory.innerText);
@@ -74,7 +74,7 @@ function updateTotalPrice() {
  function calculate(code) {
     code= document.getElementById('promo-code').value;
     if(code=='stevekaku'){
-        const reducingAmount = parseFloat(totalPrice.innerText)*0.20;
+        const reducingAmount = parseFloat(totalPrice.innerText) * 0.20;
         const afterPromoCost =totalPrice.innerText- parseFloat(reducingAmount);
        footerPrice.innerText=afterPromoCost;
        return afterPromoCost;
