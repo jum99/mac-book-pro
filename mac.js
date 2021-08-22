@@ -12,13 +12,13 @@ let bestPrice = document.getElementById("bestPrice");
  memoryPrice8.addEventListener("click", function(){
      extraMemory.innerText = "0";
      updateTotalPrice();
-    //  updateFooterPrice();
- })
+     
+ });
 memoryPrice16.addEventListener("click", function() {
      extraMemory.innerText = "180";
      updateTotalPrice();
-    //  updateFooterPrice();
-})
+     
+});
 // =====MEMORY PART ENDS=====
 
 // =====STORAGE PART STARTS===== 
@@ -26,19 +26,19 @@ const extraStorage = document.getElementById("extraStorage");
 storagePrice256.addEventListener("click", function(){
     extraStorage.innerText = "0";
     updateTotalPrice();
-    // updateFooterPrice();
-})
+     
+});
 storagePrice512.addEventListener("click", function(){
     extraStorage.innerText = "100";
     updateTotalPrice();
-    // updateFooterPrice();
-})
+     
+});
 storagePrice1Tb.addEventListener("click", function(){
     extraStorage.innerText = "180";
     updateTotalPrice();
-    // updateFooterPrice();
+     
 
-})
+});
 // =====STORAGE PART ENDS===== 
 
 // =====DELIVERY PART STARTS===== 
@@ -46,13 +46,13 @@ const deliveryCostUpdate = document.getElementById("deliveryCostUpdate");
 deliveryFree.addEventListener("click", function(){
     deliveryCostUpdate.innerText = "0";
     updateTotalPrice();
-    // updateFooterPrice();
-})
+     
+});
 deliveryCharge.addEventListener("click", function(){
     deliveryCostUpdate.innerText = "20";
     updateTotalPrice();
-    // updateFooterPrice();
-})
+     
+});
 // =====DELIVERY PART ENDS=====
 
 // =====TOTAL PRICE COUNT===== 
